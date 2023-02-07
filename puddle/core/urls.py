@@ -8,5 +8,5 @@ app_name = 'core'
 urlpatterns = [
     path('', views.index, name='index'),
     path('contact/', views.contact, name='contact'),
-    path('signip/', views.signup, name='signup'),
+    path('signup/', views.signup, name='signup'),
 ]
