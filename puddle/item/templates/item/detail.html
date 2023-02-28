@@ -11,7 +11,7 @@
 
     <div class="col-span-2 p-6 bg-gray-100 rounded-xl">
         <h1 class="mb-6 text-3xl">{{ item.name }}</h1>
-        <p class="text-grar-100"><strong>${{ item.price|intcomma }}</strong></p>
+        <p class="text-grar-100"><strong>${{ item.price|floatformat:2|intcomma }}</strong></p>
         <p class="text-grar-100"><strong>Seller: {{ item.created_by }}</strong></p>
 
         {% if item.description %}
@@ -41,7 +41,7 @@
                     <div class="p-6 bg-white rounded-b-xl">
                         <h2 class="text-2xl">{{ item.name }}
                         </h2>
-                        <p class="text-gray-500">${{ item.price }}</p>
+                        <p class="text-gray-500">${{ item.price|floatformat:2|intcomma  }}</p>
                     </div>
                 </a>
             </div>
