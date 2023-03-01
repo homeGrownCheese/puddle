@@ -4,6 +4,17 @@ from django.contrib.auth.decorators import login_required
 from .forms import NewItemForm, EditItemForm
 
 
+def items(request):
+    query = request.GET.get('query', '')
+    items = Item.objects.filter(is_sold=False)
+
+    ctx = {
+        'items': items,
+        'query': query
+    }
+    return render(request, 'item/items.html', ctx)
+
+
 def detail(request, pk):
     item = get_object_or_404(Item, pk=pk)
     related_items = Item.objects.filter(
